@@ -1,8 +1,17 @@
-package cli;
+package ui;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import service.*;
-public class CliUi {
 
+/**
+ * This class is the CLI
+ * @author Nassim BOUKHARI
+ */
+public class CliUi {
+	
+
+	public static final Scanner READER = new Scanner(System.in);
+	
 	public static void Cli(){
 		boolean quit = false;
 		do {
@@ -22,29 +31,29 @@ public class CliUi {
 			System.out.println("6 - Supprimer un ordinateur");
 			System.out.println("0 - Quitter\n");
 			System.out.println("Pour choisir une option, veuillez entrer un chiffre:");
-			String caseNumber = Company.READER.nextLine();
+			String caseNumber = READER.nextLine();
 
 			switch(caseNumber) {
 			case("0"):
 				quit = true;
 			break;
 			case("1"):
-				Computer.showComputers();
+				ComputerServices.showComputers();
 			break;
 			case("2"):
-				Company.showCompanies();
+				CompanyServices.showCompanies();
 			break;
 			case("3"):
-				Computer.showComputerDetail();
+				ComputerServices.showComputerDetail();
 			break;
 			case("4"):
-				Computer.createComputer();
+				ComputerServices.createComputer();
 			break;
 			case("5"):
-				Computer.modifyComputer();
+				ComputerServices.modifyComputer();
 			break;
 			case("6"):
-				Computer.deleteComputer();
+				ComputerServices.deleteComputer();
 			break;
 			default:
 				System.out.println("Je n'ai pas compris votre requête, veuillez recommencer.");
@@ -52,6 +61,9 @@ public class CliUi {
 			}
 		}while(!quit);
 		System.out.println("Au revoir.");
-		Computer.READER.close();
+		READER.close();
+	}
+	public static void main(String[] args) {
+		CliUi.Cli();
 	}
 }
