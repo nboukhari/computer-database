@@ -1,0 +1,8 @@
+com/excilys/cdb/service/CompanyServices.class
+com/excilys/cdb/persistence/ComputerDao.class
+com/excilys/cdb/model/Company.class
+com/excilys/cdb/model/Computer.class
+com/excilys/cdb/App.class
+com/excilys/cdb/persistence/CompanyDao.class
+com/excilys/cdb/service/ComputerServices.class
+com/excilys/cdb/ui/CliUi.class
